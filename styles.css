@@ -1,0 +1,413 @@
+/* 기본 설정 */
+:root {
+  --primary-color: #2a77c4;
+  --primary-dark: #083f77;
+  --bg-light: #e8eef5;
+  --text-color: #333;
+  --border-color: #c0c3c7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #f5f6f8;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  gap: 20px;
+}
+
+/* 좌측 컬럼 스타일 */
+.left-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-card {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.info-content {
+  position: relative;
+  z-index: 2;
+}
+
+.info-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.info-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.time-slot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-label {
+  background-color: var(--primary-dark);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.time-value {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.info-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.quick-menu {
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.quick-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.quick-item:hover {
+  transform: translateY(-3px);
+}
+
+.quick-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  filter: brightness(1.1);
+  transition: filter 0.2s ease;
+}
+
+.quick-item:hover .quick-icon {
+  filter: brightness(0.9);
+}
+
+.quick-lists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.quick-list {
+  list-style: none;
+}
+
+.quick-list a {
+  text-decoration: none;
+  color: #424242;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-left: 12px;
+}
+
+.quick-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.quick-list a::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2a77c4;
+}
+
+.quick-list a:hover {
+  color: #2a77c4;
+}
+
+/* 우측 컬럼 스타일 */
+.right-column {
+  flex: 1.2;
+  min-width: 0;
+}
+
+.search-section {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.search-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.search-title .highlight {
+  color: var(--primary-color);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.search-icon:hover {
+  opacity: 1;
+}
+
+.popular-keywords {
+  margin: 20px 0;
+}
+
+.keywords-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.keywords-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.keyword-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword-tag {
+  padding: 6px 12px;
+  border: 1px dashed var(--border-color);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.keyword-tag:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.service-item {
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+.service-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.service-name {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #e8eef5;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.icon-item:hover {
+  filter: brightness(0.95);
+}
+
+.icon-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.icon-item span {
+  font-size: 12px;
+  color: #424242;
+  text-align: center;
+}
+
+.bottom-services {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.bottom-service {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #424242;
+  gap: 12px;
+}
+
+.bottom-service img {
+  width: 32px;
+  height: 32px;
+}
+
+.bottom-service span {
+  font-size: 14px;
+}
+
+.bottom-service-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.bottom-service-name {
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quick-lists {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bottom-services {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .service-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bottom-services {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
